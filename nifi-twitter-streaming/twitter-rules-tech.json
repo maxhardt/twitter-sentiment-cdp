@@ -1,0 +1,28 @@
+{
+    "data": [
+      {
+        "id": "1614967083145510914",
+        "value": "(tesla OR #tesla OR @tesla OR from:tesla OR to:tesla) -is:retweet lang:en",
+        "tag": "tesla"
+      },
+      {
+        "id": "1615663077130649601",
+        "value": "(google OR $ABEA OR #google OR @google OR from:google OR to:google) -is:retweet lang:en",
+        "tag": "google"
+      },
+      {
+        "id": "1615664380342829056",
+        "value": "(facebook OR @facebook OR #facebook OR $meta OR #meta OR @meta OR from:meta OR to:meta OR from:facebook OR to:facebook) -is:retweet lang:en",
+        "tag": "meta"
+      },
+      {
+        "id": "1615666115299909634",
+        "value": "(@apple OR #apple OR $AAPL OR from:apple OR to:apple) -is:retweet lang:en",
+        "tag": "apple"
+      }
+    ],
+    "meta": {
+      "sent": "2023-01-18T11:03:19.599Z",
+      "result_count": 4
+    }
+  }

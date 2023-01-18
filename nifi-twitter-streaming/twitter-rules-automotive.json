@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "id": "1614967083145510912",
+            "value": "((general motors) OR #generalmotors OR from:gm OR to:gm) -is:retweet lang:en",
+            "tag": "gm"
+        },
+        {
+            "id": "1614967083145510913",
+            "value": "(rivian OR #rivian OR @rivian OR from:rivian OR to:rivian) -is:retweet lang:en",
+            "tag": "rivian"
+        },
+        {
+            "id": "1614967083145510914",
+            "value": "(tesla OR #tesla OR @tesla OR from:tesla OR to:tesla) -is:retweet lang:en",
+            "tag": "tesla"
+        },
+        {
+            "id": "1614976273742184448",
+            "value": "((ford motors) OR #ford OR @ford OR from:ford OR to:ford) -is:retweet lang:en",
+            "tag": "ford"
+        },
+        {
+            "id": "1615385133091110916",
+            "value": "((lucid motors) OR #lucidmotors OR @lucidmotors OR from:lucidmotors OR to:lucidmotors) -is:retweet lang:en",
+            "tag": "ford"
+        }
+    ],
+    "meta": {
+        "sent": "2023-01-18T07:43:11.226Z",
+        "result_count": 5
+    }
+}
