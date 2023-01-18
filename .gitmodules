@@ -1,3 +1,4 @@
 [submodule "sentiment-analysis"]
 	path = sentiment-analysis
 	url = https://github.com/maxhardt/twitter-sentiment-amp
+	branch = master
