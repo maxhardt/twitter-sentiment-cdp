@@ -666,7 +666,7 @@
                     "version": "1.18.0.2.3.7.1-1"
                 },
                 "properties": {
-                    "jolt-spec": "[\n  {\n    \"operation\": \"remove\",\n    \"spec\": {\n      \"*\": {\n        \"data\": {\n          \"edit_history_tweet_ids\": \"\"\n        }\n      }\n    }\n    },\n  {\n    \"operation\": \"shift\",\n    \"spec\": {\n      \"*\": {\n        \"matching_rules\": \"\",\n        \"data\": \"\"\n      }\n    }\n    },\n  {\n    \"operation\": \"shift\",\n    \"spec\": {\n      \"*\": {\n        \"tag\": \"request.tag\",\n        \"text\": \"request.text\"\n      }\n    }\n    }\n]",
+                    "jolt-spec": "[\n  {\n    \"operation\": \"shift\",\n    \"spec\": {\n      \"0\": {\n        \"data\": {\n          \"text\": \"request.text\"\n        },\n        \"matching_rules\": {\n          \"0\": {\n            \"tag\": \"request.tag\"\n          }\n        }\n      }\n    }\n    }\n]",
                     "jolt-transform": "jolt-transform-chain",
                     "jolt-custom-class": null,
                     "jolt-custom-modules": null,
