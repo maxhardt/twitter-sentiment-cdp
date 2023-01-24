@@ -1,0 +1,37 @@
+[
+  {
+    "name": "twitter-sentiment",
+    "parameters": [
+      {
+        "name": "CMLModelEndpoint",
+        "assetReferences": [],
+        "value": "https://modelservice.ml-8dbf1b86-d37.se-sandb.a465-9q4k.cloudera.site/model"
+      },
+      {
+        "name": "CMLModelEndpointAccessKey",
+        "assetReferences": [],
+        "value": "myflqkcdh07dptr720ok8zw17t21ovi8"
+      },
+      {
+        "name": "KafkaBrokers",
+        "assetReferences": [],
+        "value": "mengel-streams-messaging-corebroker2.se-sandb.a465-9q4k.cloudera.site:9093,mengel-streams-messaging-corebroker1.se-sandb.a465-9q4k.cloudera.site:9093,mengel-streams-messaging-corebroker0.se-sandb.a465-9q4k.cloudera.site:9093"
+      },
+      {
+        "name": "TwitterAPIBearerToken",
+        "assetReferences": [],
+        "value": "<<CDP_MISSING_SENSITIVE_VALUE>>"
+      },
+      {
+        "name": "WorkloadPassword",
+        "assetReferences": [],
+        "value": "<<CDP_MISSING_SENSITIVE_VALUE>>"
+      },
+      {
+        "name": "WorkloadUsername",
+        "assetReferences": [],
+        "value": "mengelhardt"
+      }
+    ]
+  }
+]
