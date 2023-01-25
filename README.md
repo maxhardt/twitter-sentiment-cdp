@@ -1,7 +1,5 @@
 # Real-time Twitter Sentiment Analysis on Cloudera Data Platform (CDP)
 
-![overview](./images/twitter-sentiment.excalidraw.svg)
-
 - [Real-time Twitter Sentiment Analysis on Cloudera Data Platform (CDP)](#real-time-twitter-sentiment-analysis-on-cloudera-data-platform-cdp)
   - [Introduction](#introduction)
 - [Data Pipeline Logical Architecture](#data-pipeline-logical-architecture)
@@ -30,6 +28,8 @@ The solution uses [Cloudera Data Platform](https://www.cloudera.com/) to build a
 - **Cloudera Machine Learning** to build and deploy a pretrained Model API to run sentiment analysis on each tweet and to deploy a DataViz dashboard.
 - **Cloudera Data Hub *Streams Messaging* Cluster** to buffer the enriched data in Kafka.
 - **Cloudera Data Hub *Streaming Analytics* Cluster** to build and deploy a Flink job with Cloudera SQL Stream Builder (SSB).
+
+![overview](./images/architecture/twitter-sentiment.excalidraw.svg)
 
 # Data Pipeline Logical Architecture
 
@@ -314,9 +314,11 @@ This step assumes you have downloaded the Kerberos Keytab for your CDP user. To 
 
 ## 6. DataViz
 
-In the last step Cloudera DataViz is deployed on CML and connected to the SQL Stream Builder Materialized View from the previous step.
+In the last step Cloudera DataViz is deployed on CML and connected to the SQL Stream Builder Materialized View from the previous step. Finally the dashboard is imported from the definition in [./dataviz/dashboard](dataviz/dashboard.json). Alternatively feel free to create your own dashboard instead.
 
 **Automated**
+
+- TBD: DataViz API
 
 **Manual from the UI**
 
@@ -329,3 +331,6 @@ In the last step Cloudera DataViz is deployed on CML and connected to the SQL St
     - Port: 5432
     - Username: ssb_mve
     - Password: ...
+
+3. Create a DataViz `Dataset` from the UI: ...
+4. Import the Dashboard by clicking on "Import Visual Artifacts" and uncheck the box for "Check Compatibility" ![dataviz-import](images/setup/dataviz-import.png)
