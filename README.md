@@ -1,15 +1,16 @@
 # Real-time Twitter Sentiment Analysis on Cloudera Data Platform (CDP)
 
+![overview](./images/twitter-sentiment.excalidraw.svg)
+
 - [Real-time Twitter Sentiment Analysis on Cloudera Data Platform (CDP)](#real-time-twitter-sentiment-analysis-on-cloudera-data-platform-cdp)
   - [Introduction](#introduction)
-- [Data Pipeline](#data-pipeline)
-  - [Overview](#overview)
+- [Data Pipeline Logical Architecture](#data-pipeline-logical-architecture)
   - [0. Get Tweets from Filtered Stream API](#0-get-tweets-from-filtered-stream-api)
   - [1. Enrich tweets with sentiment via CML API](#1-enrich-tweets-with-sentiment-via-cml-api)
   - [2. Publish enriched Tweets to Kafka](#2-publish-enriched-tweets-to-kafka)
   - [3. Aggregate Tweets sentiment in real-time](#3-aggregate-tweets-sentiment-in-real-time)
   - [4. Visualize results in DataViz dashboard](#4-visualize-results-in-dataviz-dashboard)
-- [Setup](#setup)
+- [Setup and deployment](#setup-and-deployment)
   - [0. Configure Twitter Filtered stream API](#0-configure-twitter-filtered-stream-api)
   - [1. Provision Cloudera Data Hubs](#1-provision-cloudera-data-hubs)
   - [2. Deploy the Model API as a Cloudera Machine Learning AMP](#2-deploy-the-model-api-as-a-cloudera-machine-learning-amp)
@@ -30,11 +31,7 @@ The solution uses [Cloudera Data Platform](https://www.cloudera.com/) to build a
 - **Cloudera Data Hub *Streams Messaging* Cluster** to buffer the enriched data in Kafka.
 - **Cloudera Data Hub *Streaming Analytics* Cluster** to build and deploy a Flink job with Cloudera SQL Stream Builder (SSB).
 
-![overview](./images/twitter-sentiment.excalidraw.svg)
-
-# Data Pipeline
-
-## Overview
+# Data Pipeline Logical Architecture
 
 The NiFi flow retrieves tweets from the Twitter Filtered stream API, runs some preprocessing, makes a call to the Cloudera Machine Learning Model API for sentiment analysis, post-processes the results, and produces them into a Kafka topic. On the consuming side, the pipeline relies on another Data Hub cluster running Apache Flink to aggregate the data from Kafka and storing the results in a Materialized View. In the last step, a DataViz Dashboard connects to the Materialized View to visualize key metrics to the end user.
 
@@ -120,7 +117,7 @@ The results are visualized using Cloudera DataViz ...
 
 The data is consumed from the [SQL Stream Builder Materialized View](https://docs.cloudera.com/cdf-datahub/7.2.15/ssb-mv-use-case/topics/csa-ssb-mv-data-viz-connector.html).
 
-# Setup
+# Setup and deployment
 
 The setup guide aims to include descriptions for deploying all infrastructure components and applications with both Cloudera automation tools and manual deployment from the UI. For the automated setup, make sure to have the [CDP CLI set up and configured](https://docs.cloudera.com/cdp-public-cloud/cloud/cli/topics/mc-cli-client-setup.html). The guide also assumes access to a CDP Public Cloud environment.
 
@@ -215,7 +212,7 @@ From your CDP environment navigate to Data Hubs and deploy the templates:
 
 ## 2. Deploy the Model API as a Cloudera Machine Learning AMP
 
-This guide assumes acces to an active CML Workspace. The Model API in this solution is wrapped in a CML AMP to automate the bootstrapping process from CML Project to Model API. The AMP specification is done in the [.project-metadata.yaml](./sentiment-analysis/.project-metadata.yaml) file.
+This guide assumes access to an active CML Workspace. The Model API in this solution is wrapped in a CML AMP to automate the bootstrapping process from CML Project to Model API. The AMP specification is done in the [.project-metadata.yaml](./sentiment-analysis/.project-metadata.yaml) file.
 
 **Automated**
 
@@ -233,7 +230,7 @@ This guide assumes acces to an active CML Workspace. The Model API in this solut
 
 ## 3. Deploy the NiFi Flow using Cloudera DataFlow
 
-This guide assumes acces to an active CDF environment.
+This guide assumes access to an active CDF environment.
 
 **Automated**
 
