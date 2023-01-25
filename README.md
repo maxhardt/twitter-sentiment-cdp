@@ -33,7 +33,7 @@ The solution uses [Cloudera Data Platform](https://www.cloudera.com/) to build a
 
 # Data Pipeline Logical Architecture
 
-The NiFi flow retrieves tweets from the Twitter Filtered stream API, runs some preprocessing, makes a call to the Cloudera Machine Learning Model API for sentiment analysis, post-processes the results, and produces them into a Kafka topic. On the consuming side, the pipeline relies on another Data Hub cluster running Apache Flink to aggregate the data from Kafka and storing the results in a Materialized View. In the last step, a DataViz Dashboard connects to the Materialized View to visualize key metrics to the end user.
+The NiFi flow retrieves tweets from the Twitter Filtered stream API, runs some preprocessing, makes a call to the Cloudera Machine Learning Model API for sentiment analysis, post-processes the results, and produces them into a Kafka topic. On the consuming side, the pipeline relies on another Data Hub cluster running Apache Flink to aggregate the data from Kafka and storing the results in a Materialized View. In the last step, a DataViz dashboard connects to the Materialized View to visualize key metrics to the end user.
 
 ## 0. Get Tweets from Filtered Stream API
 
@@ -314,7 +314,7 @@ This step assumes you have downloaded the Kerberos Keytab for your CDP user. To 
 
 ## 6. DataViz
 
-In the last step Cloudera DataViz is deployed on CML and connected to the SQL Stream Builder Materialized View from the previous step. Finally the dashboard is imported from the definition in [./dataviz/dashboard](dataviz/dashboard.json). Alternatively feel free to create your own dashboard instead.
+In the last step Cloudera DataViz is deployed on CML and connected to the SQL Stream Builder Materialized View from the previous step. The dashboard along with `Data Connections` and `Datasets` are imported from the [./dataviz/dashboard](dataviz/dashboard.json) file. Alternatively feel free to create your own dashboard instead. 
 
 **Automated**
 
@@ -332,5 +332,5 @@ In the last step Cloudera DataViz is deployed on CML and connected to the SQL St
     - Username: ssb_mve
     - Password: ...
 
-3. Create a DataViz `Dataset` from the UI: ...
-4. Import the Dashboard by clicking on "Import Visual Artifacts" and uncheck the box for "Check Compatibility" ![dataviz-import](images/setup/dataviz-import.png)
+3. Import the dashboard by clicking on "Import Visual Artifacts" and uncheck the box for "Check Compatibility" ![dataviz-import](images/setup/dataviz-import.png)
+4. Verify the dashboard is displaying the expected results: ![dashboard](images/setup/dataviz-dashboard.png)
