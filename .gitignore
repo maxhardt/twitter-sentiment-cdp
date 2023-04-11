@@ -155,3 +155,5 @@ cython_debug/
 # secrets
 *.twitter_credentials
 *.keytab
+.cdp_sandbox_credentials
+*twitter-sentiment-parameter-groups.json

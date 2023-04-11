@@ -5,17 +5,17 @@
       {
         "name": "CMLModelEndpoint",
         "assetReferences": [],
-        "value": "https://modelservice.ml-8dbf1b86-d37.se-sandb.a465-9q4k.cloudera.site/model"
+        "value": "<CML_MODEL_ENDPOINT>"
       },
       {
         "name": "CMLModelEndpointAccessKey",
         "assetReferences": [],
-        "value": "myflqkcdh07dptr720ok8zw17t21ovi8"
+        "value": "<CML_ENDPOINT_ACCESS_KEY>"
       },
       {
         "name": "KafkaBrokers",
         "assetReferences": [],
-        "value": "mengel-streams-messaging-corebroker2.se-sandb.a465-9q4k.cloudera.site:9093,mengel-streams-messaging-corebroker1.se-sandb.a465-9q4k.cloudera.site:9093,mengel-streams-messaging-corebroker0.se-sandb.a465-9q4k.cloudera.site:9093"
+        "value": "<KAFKA_BROKER_0>, <KAFKA_BROKER_1>, <KAFKA_BROKER_2>"
       },
       {
         "name": "TwitterAPIBearerToken",
@@ -30,7 +30,7 @@
       {
         "name": "WorkloadUsername",
         "assetReferences": [],
-        "value": "mengelhardt"
+        "value": "<CDP_USERNAME>"
       }
     ]
   }
