@@ -271,7 +271,7 @@ cdp df create-deployment \
 
 ## 5. Build the aggregated Materialized View in SQL Stream Builder (SSB)
 
-This step requires you to have downloaded the Kerberos Keytab for your CDP user. To download your Keytab navigate to CDP Management Console and specify the environment you need the Keytab for: ![keytab](images/setup/keytab.png)
+This step requires you to have downloaded the Kerberos Keytab for your CDP user. To download your Keytab navigate to CDP Management Console -> User -> Actions -> Get Keytab: ![keytab](images/setup/keytab.png)
 
 **CDP UI**
 
